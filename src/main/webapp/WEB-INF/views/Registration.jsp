@@ -35,6 +35,14 @@
 					<td><form:input path="birthDate" /></td>
 				</tr>
 				<tr>
+                	<td>First Name:</td>
+                	<td><form:input path="firstName" /></td>
+                </tr>
+				<tr>
+                	<td>Last Name:</td>
+                	<td><form:input path="lastName" /></td>
+                </tr>
+				<tr>
 					<td colspan="2" align="center"><input type="submit" value="Register" /></td>
 				</tr>
 			</table>

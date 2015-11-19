@@ -28,6 +28,8 @@ public class RegisterController {
 		System.out.println("password: " + user.getPassword());
 		System.out.println("email: " + user.getEmail());
 		System.out.println("birth date: " + user.getBirthDate());
+		System.out.println("first name: " + user.getFirstName());
+		System.out.println("last name: " + user.getLastName());
 
 		return "RegistrationSuccess";
 	}

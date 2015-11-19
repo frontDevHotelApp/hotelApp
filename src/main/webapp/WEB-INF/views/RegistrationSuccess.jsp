@@ -20,7 +20,7 @@
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
-					<h3>Thank you for registering!</h3>
+					<h3>Thank you for registering ${userForm.firstName} ${userForm.lastName}!</h3>
 				</td>
 			</tr>
 			<tr>
