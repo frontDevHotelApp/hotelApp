@@ -5,7 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 import java.util.Map;
 
 @Controller
@@ -13,24 +17,17 @@ import java.util.Map;
 public class RegisterController {
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String viewRegistration(Map<String, Object> model) {
-		User userForm = new User();		
+	public ModelAndView viewRegistration(HttpServletRequest request, HttpServletResponse response) {
+		User userForm = new User();
+		Map<String, Object> model = new HashMap<>();
 		model.put("userForm", userForm);
 		
-		return "Registration";
+		return new ModelAndView("Registration", "userForm", userForm);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String processRegistration(@ModelAttribute("userForm") User user, 
-			Map<String, Object> model) {
-
-		System.out.println("username: " + user.getUsername());
-		System.out.println("password: " + user.getPassword());
-		System.out.println("email: " + user.getEmail());
-		System.out.println("birth date: " + user.getBirthDate());
-		System.out.println("first name: " + user.getFirstName());
-		System.out.println("last name: " + user.getLastName());
-
-		return "RegistrationSuccess";
+	public ModelAndView processRegistration(HttpServletRequest request, HttpServletResponse response,
+											@ModelAttribute("userForm") User user) {
+		return new ModelAndView("RegistrationSuccess", "userForm", user);
 	}
 }

@@ -9,6 +9,7 @@ public class User {
 	private Date birthDate;
 	private String firstName;
 	private String lastName;
+	private UserType userType;
 
 	public String getUsername() {
 		return username;
@@ -50,5 +51,18 @@ public class User {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public UserType getUserType() {
+		return userType;
+	}
+
+	public void setUserType(UserType userType) {
+		this.userType = userType;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return super.equals(obj);
 	}
 }
